@@ -4,13 +4,15 @@
 
 body {
   margin: 0;
+  /* font-family: 'Roboto', sans-serif; */
   font-family: 'Open Sans', sans-serif;
   background-color: rgba(161, 0, 0, 0.3);
 }
 
 .page {
   width: 100%;
-  padding-bottom: 64px;
+  padding-bottom: 4rem;
+  /* padding-bottom: 64px; */
 }
 
 .recipe {
@@ -30,15 +32,18 @@ body {
 
 .content {
   background-color: rgba(252, 252, 252, 1);
-  padding: 48px 16px 64px 16px;
+  padding: 3rem 1rem 4rem 1rem;
+  /* padding: 48px 16px 64px 16px; */
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
+  /* gap: 24px; */
 }
 
 h1 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 1.75rem;
+  /* font-size: 28px; */
   line-height: 1;
   letter-spacing: 0;
   color: rgba(161, 0, 0, 1);
@@ -46,15 +51,18 @@ h1 {
 
 .intro {
   background-color: rgba(235, 235, 235, 1);
-  padding: 16px;
+  padding: 1rem;
+  /* padding: 16px; */
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  /* flex-direction: row; */
+  gap: 0.625rem;
+  /* gap: 10px; */
 }
 
 .intro p {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
+  /* font-size: 16px; */
   line-height: 1;
   letter-spacing: 0;
   margin: 0;
@@ -62,18 +70,22 @@ h1 {
 }
 
 h2 {
+  font-family: 'Roboto', 'Helvetica', sans-serif; 
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
+  /* font-size: 24px; */
   line-height: 1;
   letter-spacing: 0;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
+  /* gap: 16px; */
 }
 
 .portion {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
+  /* font-size: 16px; */
   line-height: 1;
   letter-spacing: 0;
   margin: 0;
@@ -81,30 +93,36 @@ h2 {
 
 ul {
   margin: 0;
-  padding-left: 32px; /* plats för punkter */
+  padding-left: 2rem; /*prickar - avstånd*/
+  /* padding-left: 32px; */
   /* list-style: none;
     padding-left: 0; */
 }
 
 li {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  /* font-size: 16px; */
+  line-height: 2rem;
+  /* line-height: 32px; */
   letter-spacing: 0;
   color: rgba(0, 0, 0, 1);
 }
 
 ol {
   margin: 0;
-  padding-left: 24px;
+  padding-left: 1.5rem; /* siffror - avstånd */
+  /* padding-left: 24px; */
 /* plats för siffror */
 }
 
 ol li {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  /* font-size: 16px; */
+  line-height: 2rem;
+  /* line-height: 32px; */
   letter-spacing: 0;
   color: rgba(0, 0, 0, 1);
 }
@@ -112,7 +130,8 @@ ol li {
 .image-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
+  /* gap: 24px; */
 }
 
 .image-grid img {
@@ -149,7 +168,8 @@ ol li {
   }
 
   .content {
-    padding: 48px 48px 64px 48px;
+    padding: 3rem 3rem 4rem 3rem;
+    /* padding: 48px 48px 64px 48px; */
   }
 
   .intro {
@@ -159,7 +179,8 @@ ol li {
   .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 1.5rem;
+    /* gap: 24px; */
   }
 
   .image-grid img {
