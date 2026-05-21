@@ -1,12 +1,84 @@
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+} 
+
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font: inherit; */
+}
+
+/* responsive images */
+ /* height: auto; */
+img {
+    display: block; 
+    max-width: 100%;    
+    object-fit: cover;  /*bilden fyller sin yta */
+}
+
+figure {
+  margin: 0;
+}
+
+/* don't leave one single word hanging in paragraphs */
+p {
+    text-wrap: pretty;
+}
+
+/* make the rows more balanced so the headings looks nicer */
+h1,
+h2 {
+    text-wrap: balance;
+}
+
+/* variables */
+:root {
+  /* colors */
+  --color-background: rgba(161, 0, 0, 0.3);
+  --color-white: rgba(252, 252, 252, 1);
+  --color-primary: rgba(161, 0, 0, 1);
+  --color-intro-bg: rgba(235, 235, 235, 1);
+  --color-text: rgba(0, 0, 0, 1);
+
+  /* font */
+  --font-family-base: 'Roboto', sans-serif;
+
+  /* font-sizes */
+  --font-size-body: 1rem;
+  --font-size-h1: 1.75rem;
+  --font-size-h2: 1.5rem;
+
+  /* font weights */
+  --font-weight-regular: 400; 
+  --font-weight-bold: 700;
+
+  /* spacing */
+  --spacing-xsmall: 0.625rem;   /*10px*/
+  --spacing-small: 1rem;        /*16px*/  
+  --spacing-medium: 1.5rem;     /*24px; */  
+  --spacing-medium-large: 2rem; /*32px; */
+  --spacing-large: 3rem;        /*48px; */
+  --spacing-xlarge: 4rem;       /*64px; */
+
+  /* line height */
+  --line-height-small: 1;
+  --line-height-large: 2rem; /*32px; */
+
+  /* image heights */
+  --hero-height-mobile: 300px;
+  --hero-height-tablet: 350px;
+  --hero-height-desktop: 500px;
+  --image-height: 467px;
+
 }
 
 body {
-  margin: 0;
-  /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Open Sans', sans-serif;
-  background-color: rgba(161, 0, 0, 0.3);
+  font-family: var(--font-family-base);
+  /* font-family: 'Open Sans', sans-serif; */
+  background-color: var(--color-background);
 }
 
 .page {
@@ -19,133 +91,135 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  background-color: rgba(252, 252, 252, 1);
+  background-color: var(--color-white);
 }
 
 .hero {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border: 1px solid rgba(252, 252, 252, 1);
-  display: block;
+  height: var(--hero-height-mobile);
+  /* object-fit: cover; */
+  border: 1px solid var(--color-white);
 }
 
 .content {
-  background-color: rgba(252, 252, 252, 1);
-  padding: 3rem 1rem 4rem 1rem;
+  background-color: var(--color-white);
+  padding:
+    var(--spacing-large) 
+    var(--spacing-small) 
+    var(--spacing-xlarge) 
+    var(--spacing-small);
+  /* padding: 3rem 1rem 4rem 1rem; */
   /* padding: 48px 16px 64px 16px; */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--spacing-medium);
   /* gap: 24px; */
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h1);
   /* font-size: 28px; */
   line-height: 1;
   letter-spacing: 0;
-  color: rgba(161, 0, 0, 1);
+  color: var(--color-primary);
 }
 
 .intro {
-  background-color: rgba(235, 235, 235, 1);
-  padding: 1rem;
+  background-color: var(--color-intro-bg);
+  padding: var(--spacing-small);
   /* padding: 16px; */
   display: flex;
   /* flex-direction: row; */
-  gap: 0.625rem;
+  gap: var(--spacing-xsmall);
   /* gap: 10px; */
 }
 
 .intro p {
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
   /* font-size: 16px; */
   line-height: 1;
   letter-spacing: 0;
-  margin: 0;
-  color: rgba(0, 0, 0, 1);
+  color: var(--color-text);
 }
 
 h2 {
-  font-family: 'Roboto', 'Helvetica', sans-serif; 
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h2);
   /* font-size: 24px; */
   line-height: 1;
   letter-spacing: 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--spacing-small);
   /* gap: 16px; */
 }
 
 .portion {
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
   /* font-size: 16px; */
   line-height: 1;
   letter-spacing: 0;
-  margin: 0;
 }
 
 ul {
-  margin: 0;
-  padding-left: 2rem; /*prickar - avstånd*/
-  /* padding-left: 32px; */
+  padding-left: var(--spacing-medium-large); /*prickar avstånd*/
+  /* padding-left: 32px; 2 rem*/
   /* list-style: none;
     padding-left: 0; */
 }
 
 li {
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
   /* font-size: 16px; */
   line-height: 2rem;
   /* line-height: 32px; */
   letter-spacing: 0;
-  color: rgba(0, 0, 0, 1);
+  color: var(--color-text);
+}
+
+ol[role='list'] {
+  list-style: none;
 }
 
 ol {
-  margin: 0;
-  padding-left: 1.5rem; /* siffror - avstånd */
+  padding-left: var(--spacing-medium); /* siffror - avstånd */
   /* padding-left: 24px; */
 /* plats för siffror */
 }
 
 ol li {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
   /* font-size: 16px; */
-  line-height: 2rem;
+  line-height: var(--line-height-large);
   /* line-height: 32px; */
   letter-spacing: 0;
-  color: rgba(0, 0, 0, 1);
+  color: var(--color-text);
 }
 
 .image-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--spacing-medium);
   /* gap: 24px; */
 }
 
 .image-grid img {
   width: 100%;
   min-width: 300px;
-  height: 467px;
-  object-fit: cover;
+  height: var(--image-height);
+  /* object-fit: cover; */
   display: block;
 }
 
 
 @media (min-width: 768px) {
   .hero {
-    height: 350px;
+    height: var(--hero-height-tablet);
   }
 
   .recipe {
@@ -162,13 +236,18 @@ ol li {
 
   .hero {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border: 1px solid rgba(252, 252, 252, 1);
+    height: var(--hero-height-desktop);
+    /* object-fit: cover; */
+    border: 1px solid var(--color-white);
   }
 
   .content {
-    padding: 3rem 3rem 4rem 3rem;
+    padding:     
+    var(--spacing-large)
+    var(--spacing-large)  
+    var(--spacing-xlarge) 
+    var(--spacing-large) ;
+    /* padding: 3rem 3rem 4rem 3rem; */
     /* padding: 48px 48px 64px 48px; */
   }
 
@@ -179,12 +258,12 @@ ol li {
   .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: var(--spacing-medium);
     /* gap: 24px; */
   }
 
   .image-grid img {
     width: 100%;
-    height: 467px;
+    height: var(--image-height);
   }
 }
