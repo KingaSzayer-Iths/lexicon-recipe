@@ -225,12 +225,17 @@ ol li {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 400;
+  color: #8f1d1d;
+  letter-spacing: 0.04em;
 
+  /* font-family: 'Pacifico', cursive;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 400;
   background: linear-gradient(90deg, #8f1d1d, #c0392b);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-
+  color: transparent; */
 
   /* font-family: 'Pacifico', cursive;
   display: flex;
@@ -249,6 +254,11 @@ ol li {
   -webkit-text-fill-color: transparent; */
 }
 
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
 
 .site-header {
   background-color: var(--color-white);
@@ -259,17 +269,21 @@ ol li {
 .navbar {
   max-inline-size: 1280px;
   margin-inline: auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding-inline: 2rem;
+  /* padding-inline: 2rem; */
   /* max-inline-size: 1280px;
   margin-inline: auto;
   display: flex;
   align-items: center;
   gap: 1rem; */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: white;
 }
 
 .logo,
@@ -281,13 +295,44 @@ ol li {
 
 .logo {
   /* flex: 1; */
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  font-family: 'Pacifico', cursive;
+  color: #8f1d1d;
   font-weight: 700;
   text-decoration: none;
   /* flex: 1;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   font-size: 1.25rem; */
+}
+
+/* hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* menu */
+
+.nav-links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  list-style: none;
+  margin: 0;
+}
+
+
+/* hamburger */
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #8f1d1d;
 }
 
 .nav-links {
@@ -315,6 +360,11 @@ ol li {
   font-weight: 700;
   text-decoration: none;
 }
+/* show menu when checked */
+#menu-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
 
 .login-button {
   /* flex: 1; */
@@ -430,6 +480,19 @@ ol li {
   /* framsida */
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    background: none;
   }
 }
 

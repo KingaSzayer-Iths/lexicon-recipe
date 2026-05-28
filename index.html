@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Pannkaksmagi ger inspiration och tips på olika sätt att äta pannkakor." />
-  <title>Pannkaksmagi</title>
+    <title>Pannkaksmagi</title>
     <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="site-header">
         <nav class="navbar" aria-label="Huvudmeny">
-            <a href="index.html" class="logo">Pannkaksmagi</a>
+
+            <a href="index.html" class="logo">
+                🥞 Pannkaksmagi
+            </a>
+
+            <!-- hidden checkbox -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- hamburger icon -->
+            <label for="menu-toggle" class="hamburger">
+                ☰
+            </label>
 
             <ul class="nav-links" role="list">
                 <li><a href="recept.html">Recept</a></li>
                 <li><a href="#">Om oss</a></li>
                 <li><a href="#">Kontakt</a></li>
+                <li><a href="#">Logga in</a></li>
             </ul>
 
-            <a href="#" class="login-button">Logga in</a>
         </nav>
     </header>
 
@@ -28,7 +41,16 @@
         <section class="home-hero">
             <div class="home-hero__content">
                 <h1>Pannkakor på nya sätt</h1>
-                <p>Välkommen till Pannkaksmagi! Upptäck inspiration, tips och goda idéer för att servera pannkakor till vardag, helg och fest.</p>
+                <!-- <div class="hero-text"> -->
+                <!-- <p>Välkommen till Pannkaksmagi!</p>
+                <p>
+                Upptäck inspiration, tips och goda idéer för att servera
+                pannkakor till vardag, helg och fest.
+                </p>
+                </div> -->
+                <p>Välkommen till Pannkaksmagi!</p>
+                <p> Upptäck inspiration, tips och goda idéer för att servera pannkakor till vardag, helg och fest.</p>
+                <!-- <p>Välkommen till Pannkaksmagi! Upptäck inspiration, tips och goda idéer för att servera pannkakor till vardag, helg och fest.</p> -->
             </div>
         </section>
 
@@ -36,8 +58,6 @@
             <h2>Populära pannkakor</h2>
 
             <div class="card-grid">
-
-
                 <article class="recipe-card">
                     <img src="images/fluffiga-amerikanska.webp" alt="Amerikanska pannkakor med sirap och bär">
                     <div class="recipe-card__content">
@@ -60,21 +80,22 @@
                     <img src="images/pannkaksrullar.webp" alt="Rullade pannkakor med sylt och grädde">
                     <div class="recipe-card__content">
                         <h2>Frasiga pannkaksrullar</h2>
-                    <p>Rullade pannkakor med sylt och vispad grädde, serverade som en klassisk svensk favorit.</p>
-                    <a class="card-button" href="recept.html">Till receptet</a>
+                        <p>Rullade pannkakor med sylt och vispad grädde, serverade som en klassisk svensk favorit.</p>
+                        <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-                
+
                 <article class="recipe-card">
                     <img src="images/crêpes med svamp.webp" alt="Crêpes fyllda med ost och svamp">
                     <div class="recipe-card__content">
                         <h2>Krämiga crêpes med svamp</h2>
-                    <p>Tunna franska crêpes fyllda med ost, svamp och färska örter för en matigare variant.</p>
-                    <a class="card-button" href="recept.html">Till receptet</a>
+                        <p>Tunna franska crêpes fyllda med ost, svamp och färska örter för en matigare variant.</p>
+                        <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
             </div>
         </section>
     </main>
 </body>
+
 </html>
