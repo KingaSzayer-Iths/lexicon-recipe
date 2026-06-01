@@ -166,7 +166,7 @@ h2 {
 }
 
 ul {
-  padding-left: var(--spacing-medium-large); /*prickar avstånd*/
+  padding-left: var(--spacing-medium-large); /*prickar - avstånd*/
   /* padding-left: 32px; 2 rem*/
   /* list-style: none;
     padding-left: 0; */
@@ -182,9 +182,9 @@ li {
   color: var(--color-text);
 }
 
-ol[role='list'] {
+/* ol[role='list'] {
   list-style: none;
-}
+} */
 
 ol {
   padding-left: var(--spacing-medium); /* siffror - avstånd */
