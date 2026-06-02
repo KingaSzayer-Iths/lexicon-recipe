@@ -47,14 +47,28 @@ h2 {
   --font-family-base: 'Arial', sans-serif;
   /* --font-family-base: 'Roboto', sans-serif; */
 
+
+  /* fluid font sizes */
+  --font-size-body: clamp(1rem, 1.5vw, 1.125rem); /* Responsiv textstorlek mellan 16px och 18px, 1,5% av skärmens bredd*/
+  --font-size-h1: clamp(1.75rem, 5vw, 4rem);
+  --font-size-h2: clamp(1.5rem, 3vw, 2rem); /* Responsiv rubrikstorlek mellan 24px och 32px */
+
   /* font-sizes */
-  --font-size-body: 1rem;
+  /* --font-size-body: 1rem;
   --font-size-h1: 1.75rem;
-  --font-size-h2: 1.5rem;
+  --font-size-h2: 1.5rem; */
 
   /* font weights */
   --font-weight-regular: 400; 
   --font-weight-bold: 700;
+
+    /* fluid spacing */
+  /* --section-padding: clamp(2rem, 6vw, 4rem); */
+  --content-padding-inline: clamp(1rem, 5vw, 3rem); /* Responsiv sidopadding som växer mellan mobil och desktop */
+  --content-padding-block: clamp(2rem, 6vw, 4rem);  /* Responsiv topp- och bottenpadding */
+
+    /* fluid hero heights */
+  --hero-height: clamp(18.75rem, 45vw, 31.25rem); /* Responsiv hero-höjd mellan 300px och 500px */
 
   /* spacing */
   --spacing-xsmall: 0.625rem;   /*10px*/
@@ -65,14 +79,15 @@ h2 {
   --spacing-xlarge: 4rem;       /*64px; */
 
   /* line height */
-  --line-height-small: 1;
-  --line-height-large: 2rem; /*32px; */
+  --line-height-small: 1; /* Enke/kompakt radhöjd utan extra mellanrum */
+  --line-height-large: 2rem; /*32px; Större/luftigare radhöjd för bättre läsbarhet */
 
   /* image heights */
-  --hero-height-mobile: 300px;
+  /* --hero-height: clamp(18.75rem, 45vw, 31.25rem); */
+  /* --hero-height-mobile: 300px;
   --hero-height-tablet: 350px;
-  --hero-height-desktop: 500px;
-  --image-height: 467px;
+  --hero-height-desktop: 500px; */
+  /* --image-height: 467px; */
 
 }
 
@@ -97,24 +112,28 @@ body {
 
 .hero {
   width: 100%;
-  height: var(--hero-height-mobile);
-  /* object-fit: cover; */
+  height: var(--hero-height);
   border: 1px solid var(--color-white);
+
+  /* height: var(--hero-height-mobile); */
 }
 
 .content {
   background-color: var(--color-white);
-  padding:
+  padding-inline: var(--content-padding-inline);/* Responsiv padding som växer mellan mobil och desktop */
+  padding-block: var(--content-padding-block);
+  /* padding-block: var(--section-padding); */
+  flex-direction: column;
+  display: flex;
+  gap: var(--spacing-medium);
+  /* gap: 24px; */
+  /* padding:
     var(--spacing-large) 
     var(--spacing-small) 
     var(--spacing-xlarge) 
-    var(--spacing-small);
+    var(--spacing-small); */
   /* padding: 3rem 1rem 4rem 1rem; */
   /* padding: 48px 16px 64px 16px; */
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-medium);
-  /* gap: 24px; */
 }
 
 h1 {
@@ -277,6 +296,12 @@ ol li {
   padding-inline: 1.5rem;
 }
 
+.recipe,
+.popular-section,
+.navbar {
+  max-inline-size: min(100%, 1280px); /*använd aldrig mer än 1280px men låt passa mindre skärmar */
+}
+
 .logo,
 .login-button,
 .nav-links a,
@@ -305,9 +330,9 @@ ol li {
 /* menu */
 .nav-links {
   position: absolute;
-  inset-block-start: 100%;
+  inset-block-start: 100%;  /* Placerar menyn direkt under navbaren */
   inset-inline-start: 0;
-  inline-size: 100%;
+  inline-size: 100%;  /* Elementet fyller hela bredden */
   display: none;
   flex-direction: column;
   gap: 0.5rem;
@@ -356,19 +381,20 @@ ol li {
 }
 
 .home-hero {
-  min-block-size: 30rem;
+  min-block-size: clamp(24rem, 60vw, 36rem); /* Hero-sektions höjd: minst 24rem, växer med viewporten, max 36rem */
+  /* min-block-size: 30rem; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     url("images/home-hero.webp");
   background-size: cover;
   background-position: center;
   display: grid;
-  place-items: center;
+  place-items: center;  /* Centrerar innehållet horisontellt och vertikalt */
   padding-inline: 1rem;
   text-align: center;
 }
 
 .home-hero__content {
-  max-inline-size: 45rem;
+  max-inline-size: 45rem; /* Begränsar textbredden för bättre läsbarhet */
   color: white;
 }
 
@@ -384,7 +410,7 @@ ol li {
 
 .popular-section {
   max-inline-size: 1280px;
-  margin-inline: auto;
+  margin-inline: auto;  /* Centrerar elementet horisontellt */
   padding-block: 4rem;
   padding-inline: 1rem;
 }
@@ -407,10 +433,11 @@ ol li {
 
 .recipe-card img {
   inline-size: 100%;
-  block-size: 14rem;
+  block-size: clamp(12rem, 25vw, 16rem);  /* Responsiv bildhöjd för kort */
+  /* block-size: 14rem; */
   object-fit: cover;
-  display: block;
-}
+  display: block; 
+} 
 
 .recipe-card__content {
   padding: 1rem;
@@ -444,9 +471,9 @@ ol li {
 }
 
 @media (min-width: 768px) {
-  .hero {
+  /* .hero {
     height: var(--hero-height-tablet);
-  }
+  } */
 
   .recipe {
     width: 80%;
@@ -485,7 +512,7 @@ ol li {
   }
 
   .card-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
 
@@ -494,12 +521,12 @@ ol li {
     margin: 0 auto;
   }
 
-  .hero {
+  /* .hero {
     width: 100%;
     height: var(--hero-height-desktop);
-    /* object-fit: cover; */
+    object-fit: cover;
     border: 1px solid var(--color-white);
-  }
+  } */
 
   .content {
     padding:     
