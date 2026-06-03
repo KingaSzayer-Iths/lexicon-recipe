@@ -49,6 +49,7 @@ h2 {
 
 
   /* fluid font sizes */
+  /* 1.5vw = 1,5% av viewportens/skärmens bredd */
   --font-size-body: clamp(1rem, 1.5vw, 1.125rem); /* Responsiv textstorlek mellan 16px och 18px, 1,5% av skärmens bredd*/
   --font-size-h1: clamp(1.75rem, 5vw, 4rem);
   --font-size-h2: clamp(1.5rem, 3vw, 2rem); /* Responsiv rubrikstorlek mellan 24px och 32px */
@@ -62,12 +63,12 @@ h2 {
   --font-weight-regular: 400; 
   --font-weight-bold: 700;
 
-    /* fluid spacing */
+  /* fluid spacing */
   /* --section-padding: clamp(2rem, 6vw, 4rem); */
   --content-padding-inline: clamp(1rem, 5vw, 3rem); /* Responsiv sidopadding som växer mellan mobil och desktop */
   --content-padding-block: clamp(2rem, 6vw, 4rem);  /* Responsiv topp- och bottenpadding */
 
-    /* fluid hero heights */
+  /* fluid hero heights */
   --hero-height: clamp(18.75rem, 45vw, 31.25rem); /* Responsiv hero-höjd mellan 300px och 500px */
 
   /* spacing */
@@ -89,12 +90,35 @@ h2 {
   --hero-height-desktop: 500px; */
   /* --image-height: 467px; */
 
+
+  /* main color system in oklch */
+
+  --color-brand: oklch(65% 0.16 28);
+  /* --color-brand: oklch(45% 0.18 28); */
+  --color-background: oklch(86% 0.05 25);
+  --color-surface: oklch(99% 0.01 25);
+  --color-text: oklch(18% 0.02 25);
+
+  /* colors created from main brand color */
+  --color-brand-light: color-mix(in oklch, var(--color-brand), white 35%);
+  --color-brand-dark: color-mix(in oklch, var(--color-brand), black 20%);
+  --color-brand-soft: color-mix(in oklch, var(--color-brand), white 80%);
+  
+  /* --color-intro-bg: color-mix(in oklch, lightgray 60%, var(--color-brand) 1%);  */
+
+  /* card-button */
+  --button-bg: var(--color-brand);
+  --button-bg: color-mix(in oklch, var(--color-brand), white 20%);
+  --button-bg-hover: color-mix(in oklch, var(--button-bg), black 10%);
+  /* --button-text: contrast-color(var(--button-bg), white, black); fungerar inte i min webbläsare */
+
 }
 
 body {
   font-family: var(--font-family-base);
   /* font-family: 'Open Sans', sans-serif; */
   background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .page {
@@ -138,7 +162,7 @@ body {
 
 h1 {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-h2);
   /* font-size: 28px; */
   line-height: 1;
   letter-spacing: 0;
@@ -157,7 +181,7 @@ h1 {
 
 .intro p {
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-h1);
   /* font-size: 16px; */
   line-height: 1;
   letter-spacing: 0;
@@ -239,44 +263,12 @@ ol li {
 
 
 /* Framsida index.html*/
-.logo {
-  font-family: 'Pacifico', cursive;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 400;
-  color: #8f1d1d;
-  letter-spacing: 0.04em;
 
-  /* font-family: 'Pacifico', cursive;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 400;
-  background: linear-gradient(90deg, #8f1d1d, #c0392b);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent; */
-
-  /* font-family: 'Pacifico', cursive;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(
-    90deg,
-    #8f1d1d,
-    #f08c8c
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-}
-
-.hero-text {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
+.site-header,
+.recipe,
+.content,
+.recipe-card {
+  background-color: var(--color-surface);
 }
 
 .site-header {
@@ -314,12 +306,16 @@ ol li {
   /* color: var(--color-primary); */
   font-family: 'Pacifico', cursive;
   color: #8f1d1d;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
-  /* flex: 1;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  font-size: 1.25rem; */
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+}
+
+.logo,
+h1,
+.popular-section > h2 {
+  color: var(--color-brand);
 }
 
 /* hide checkbox */
@@ -345,20 +341,24 @@ ol li {
   z-index: 100;
 }
 
-
-/* hamburger */
-.hamburger {
-  font-size: 2rem;
-  cursor: pointer;
-  color: #8f1d1d;
-}
-
 .nav-links a {
   display: block;
   padding-block: 0.5rem;
   color: black;
   text-decoration: none;
   font-weight: 700;
+  color: var(--color-text);
+
+  &:hover {
+    color: var(--color-brand);
+  }
+}
+
+/* hamburger */
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #8f1d1d;
 }
 
 /* show menu when checked */
@@ -454,12 +454,20 @@ ol li {
 .card-button {
   align-self: flex-start;
   /* background-color: var(--color-primary); */
-  background-color: rgb(211, 21, 21);
-  color: white;
+  /* background-color: rgb(211, 21, 21); */
+  /* color: white; */
   padding-block: 0.75rem;
   padding-inline: 1rem;
   font-weight: var(--font-weight-bold);
-  border-radius: .8rem
+  border-radius: .8rem;
+
+  background-color: var(--button-bg);
+  color: var(--button-text);
+
+  &:hover {
+    background-color: var(--button-bg);
+    color: white;
+  }
 }
 
 .recipe-card__content h2 {
