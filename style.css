@@ -91,26 +91,28 @@ h2 {
   /* --image-height: 467px; */
 
 
+
   /* main color system in oklch */
 
-  --color-brand: oklch(65% 0.16 28);
-  /* --color-brand: oklch(45% 0.18 28); */
-  --color-background: oklch(86% 0.05 25);
-  --color-surface: oklch(99% 0.01 25);
-  --color-text: oklch(18% 0.02 25);
+  /* 65%=ljushet 0.16=färgstyrka (chroma) 28=färgton (hue) */
+  --color-brand: oklch(65% 0.16 28);  /* Primärfärg i OKLCH-format som används för logga, rubriker och knappar */
+  --color-background: oklch(86% 0.05 25);  /* Ljus bakgrundsfärg för sidan */  
+  --color-surface: oklch(99% 0.01 25);  /* Nästan vit färg för kort och innehållsytor */
+  --color-text: oklch(18% 0.02 25); /* Mörk textfärg för god läsbarhet */
 
   /* colors created from main brand color */
-  --color-brand-light: color-mix(in oklch, var(--color-brand), white 35%);
-  --color-brand-dark: color-mix(in oklch, var(--color-brand), black 20%);
-  --color-brand-soft: color-mix(in oklch, var(--color-brand), white 80%);
+  --color-brand-light: color-mix(in oklch, var(--color-brand), white 35%); /* Ljusare variant av huvudfärgen vid hover på nav-links a  */
+  --color-brand-dark: color-mix(in oklch, var(--color-brand), black 20%); /* Mörkare variant av huvudfärgen vid hover på knappar */
+  /* --color-brand-soft: color-mix(in oklch, var(--color-brand), white 80%); */
   
   /* --color-intro-bg: color-mix(in oklch, lightgray 60%, var(--color-brand) 1%);  */
 
   /* card-button */
-  --button-bg: var(--color-brand);
+  /* --button-bg: var(--color-brand);
   --button-bg: color-mix(in oklch, var(--color-brand), white 20%);
-  --button-bg-hover: color-mix(in oklch, var(--button-bg), black 10%);
-  /* --button-text: contrast-color(var(--button-bg), white, black); fungerar inte i min webbläsare */
+  --button-bg-hover: color-mix(in oklch, var(--button-bg), black 10%); */
+  
+  /* --button-text: contrast-color(var(--button-bg), white, black); */
 
 }
 
@@ -279,7 +281,7 @@ ol li {
 
 .navbar {
   max-inline-size: 1280px;  /*istället för max-width */
-  margin-inline: auto;  /*för att centrera innehållet horisontellt */
+  margin-inline: auto;  /* centrera innehållet horisontellt */
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -291,11 +293,10 @@ ol li {
 .recipe,
 .popular-section,
 .navbar {
-  max-inline-size: min(100%, 1280px); /*använd aldrig mer än 1280px men låt passa mindre skärmar */
+  max-inline-size: min(100%, 1280px); /*används inte mer än 1280px, anpassar till mindre skärmar */
 }
 
 .logo,
-.login-button,
 .nav-links a,
 .card-button {
   text-decoration: none;
@@ -316,6 +317,13 @@ ol li {
 h1,
 .popular-section > h2 {
   color: var(--color-brand);
+}
+
+.logo:hover {
+  background-color: var(--color-brand);
+  color: contrast-color(var(--color-brand), white, black); /* Väljer automatiskt vit eller svart text beroende på bakgrundens kontrast */
+  padding-inline: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 /* hide checkbox */
@@ -350,7 +358,7 @@ h1,
   color: var(--color-text);
 
   &:hover {
-    color: var(--color-brand);
+    color: var(--color-brand-light);
   }
 }
 
@@ -366,19 +374,13 @@ h1,
   display: flex;
 }
 
-.login-button {
-  /* flex: 1; */
+/* .login-button {
   display: flex;
   justify-content: flex-end;
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
-  /* flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  color: var(--color-primary);
-  font-weight: var(--font-weight-bold); */
-}
+} */
 
 .home-hero {
   min-block-size: clamp(24rem, 60vw, 36rem); /* Hero-sektions höjd: minst 24rem, växer med viewporten, max 36rem */
@@ -461,11 +463,11 @@ h1,
   font-weight: var(--font-weight-bold);
   border-radius: .8rem;
 
-  background-color: var(--button-bg);
+  background-color: var(--color-brand);
   color: var(--button-text);
 
   &:hover {
-    background-color: var(--button-bg);
+    background-color: var(--color-brand-dark);
     color: white;
   }
 }
@@ -536,15 +538,15 @@ h1,
     border: 1px solid var(--color-white);
   } */
 
-  .content {
+  /* .content {
     padding:     
     var(--spacing-large)
     var(--spacing-large)  
     var(--spacing-xlarge) 
     var(--spacing-large) ;
-    /* padding: 3rem 3rem 4rem 3rem; */
-    /* padding: 48px 48px 64px 48px; */
-  }
+    padding: 3rem 3rem 4rem 3rem;
+    padding: 48px 48px 64px 48px;
+  } */
 
   .intro {
     flex-direction: column;
