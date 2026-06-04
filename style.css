@@ -480,6 +480,24 @@ h1,
   margin-block: 0;
 }
 
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-form input {
+  padding-block: var(--spacing-small);  /* Logical properties för responsiv och flexibel spacing */
+  padding-inline: var(--spacing-medium);
+
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+}
+
+
+
+
+
 @media (min-width: 768px) {
   /* .hero {
     height: var(--hero-height-tablet);

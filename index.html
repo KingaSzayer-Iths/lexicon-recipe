@@ -74,7 +74,7 @@
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-        
+                
                 <article class="recipe-card">
                     <img src="images/crêpes med svamp.webp" loading="lazy" alt="Crêpes fyllda med ost och svamp">
                     <div class="recipe-card__content">
@@ -83,16 +83,18 @@
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-        
+                
                 <article class="recipe-card">
-                    <img src="images/Gratinerade crêpes.webp" loading="lazy" alt="Gratinerade crêpes med kyckling, ostsås och grönsaker">
+                    <img src="images/Gratinerade crêpes.webp" loading="lazy"
+                        alt="Gratinerade crêpes med kyckling, ostsås och grönsaker">
                     <div class="recipe-card__content">
                         <h2>Gratinerade crêpes</h2>
-                        <p>Matiga crêpes fyllda med kyckling, grönsaker och krämig ostsås, gratinerade i ugnen till en gyllene och smakrik måltid.</p>
+                        <p>Matiga crêpes fyllda med kyckling, grönsaker och krämig ostsås, gratinerade i ugnen till en gyllene och
+                            smakrik måltid.</p>
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-        
+                
                 <article class="recipe-card">
                     <img src="images/Franska galetter.webp" loading="lazy" alt="Franska galetter med skinka, ost och ägg">
                     <div class="recipe-card__content">
@@ -101,8 +103,40 @@
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-            </div>
-        </section>
+                </div>
+                </section>
+                
+                <section class="review-section">
+                    <h2>Recensera Pannkaksmagi</h2>
+                
+                    <p>
+                        Har du testat något av våra pannkakstips?
+                        Lämna gärna en recension eller dela med dig av dina bästa idéer.
+                    </p>
+                
+                    <form class="review-form">
+                    
+                        <label for="name">Namn</label>
+                        <input type="text" id="name" name="name" placeholder="Ange ditt namn" required>
+                    
+                        <label for="email">E-post</label>
+                        <input type="email" id="email" name="email" placeholder="namn@email.se" required>
+                    
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" placeholder="070-123 45 67">
+                    
+                        <label for="category">Vad vill du dela med dig av?</label>
+                        <select id="category" name="category">
+                            <option value="" disabled selected>Välj ett alternativ</option>
+                            <option value="recipe">Recept</option>
+                            <option value="tip">Pannkakstips</option>
+                            <option value="review">Recension</option>
+                            <option value="contact">Kontakt</option>
+                        </select>
+                    
+                    </form>
+                </section>
+
     </main>
 </body>
 
