@@ -480,18 +480,43 @@ h1,
   margin-block: 0;
 }
 
+/* Form */
+
+.review-section {   /* Begränsar formulärets bredd och centrerar det */
+  max-inline-size: 50rem;
+  margin-inline: auto;
+
+  padding-block: 3rem;
+  padding-inline: 1rem;
+}
+
+.review-section h2 {
+  margin-block-end: 1rem;   /* Lägger till marginal under rubriken */
+}
+
+.review-section p {
+  /* margin-block-start: 0; */
+  margin-block-end: 1.5rem; /* Skapar mer luft mellan beskrivningstexten och formuläret */
+}
+
 .review-form {
+  background-color: var(--color-surface);
   display: flex;
   flex-direction: column;
+  padding-block: 2rem;
+  padding-inline: 2rem;
   gap: 1rem;
 }
 
-.review-form input {
-  padding-block: var(--spacing-small);  /* Logical properties för responsiv och flexibel spacing */
-  padding-inline: var(--spacing-medium);
-
+.review-form input:not([type="radio"]):not([type="checkbox"]), /* Stylar alla input-fält utom radio-knappar och checkboxar */ 
+.review-form select,
+.review-form textarea {
+  inline-size: 100%;    /* Elementet fyller hela den tillgängliga bredden */
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
   border: 1px solid lightgray;
   border-radius: 0.5rem;
+  font: inherit;
 }
 
 .review-form fieldset {   /* Samlar radioknappar i en semantisk grupp */
@@ -500,16 +525,20 @@ h1,
 
   padding-block: 1rem;
   padding-inline: 1rem;
+  background-color: var(--color-surface);
 }
 
 .review-form legend {
   font-weight: 700;
 }
 
-.review-form fieldset label {
-  display: block;
+.review-form fieldset label { 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-block: 0.5rem;
 }
+
 
 .checkbox-label {   /* Layout för checkbox och tillhörande text */
   display: flex;
@@ -551,8 +580,6 @@ h1,
     background-color: var(--color-brand-dark);
   }
 }
-
-
 
 
 
