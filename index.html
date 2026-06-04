@@ -46,26 +46,28 @@
 
         <section class="popular-section">
             <h2>Populära pannkakor</h2>
-        
+
             <div class="card-grid">
                 <article class="recipe-card">
-                    <img src="images/fluffiga-amerikanska.webp" loading="lazy" alt="Amerikanska pannkakor med sirap och bär">
+                    <img src="images/fluffiga-amerikanska.webp" loading="lazy"
+                        alt="Amerikanska pannkakor med sirap och bär">
                     <div class="recipe-card__content">
                         <h2>Fluffiga brunchpannkakor</h2>
                         <p>Amerikanska pannkakor med lönnsirap och bär, perfekta för en lång och mysig helgfrukost.</p>
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-        
+
                 <article class="recipe-card">
-                    <img src="images/sommar-jordgubb.webp" loading="lazy" alt="Tunna pannkakor med glass och jordgubbar">
+                    <img src="images/sommar-jordgubb.webp" loading="lazy"
+                        alt="Tunna pannkakor med glass och jordgubbar">
                     <div class="recipe-card__content">
                         <h2>Sommarpannkakor med jordgubbar</h2>
                         <p>Tunna pannkakor serverade med färska jordgubbar, vaniljglass och lite pudrat florsocker.</p>
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-        
+
                 <article class="recipe-card">
                     <img src="images/pannkaksrullar.webp" loading="lazy" alt="Rullade pannkakor med sylt och grädde">
                     <div class="recipe-card__content">
@@ -74,7 +76,7 @@
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-                
+
                 <article class="recipe-card">
                     <img src="images/crêpes med svamp.webp" loading="lazy" alt="Crêpes fyllda med ost och svamp">
                     <div class="recipe-card__content">
@@ -83,59 +85,109 @@
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-                
+
                 <article class="recipe-card">
                     <img src="images/Gratinerade crêpes.webp" loading="lazy"
                         alt="Gratinerade crêpes med kyckling, ostsås och grönsaker">
                     <div class="recipe-card__content">
                         <h2>Gratinerade crêpes</h2>
-                        <p>Matiga crêpes fyllda med kyckling, grönsaker och krämig ostsås, gratinerade i ugnen till en gyllene och
+                        <p>Matiga crêpes fyllda med kyckling, grönsaker och krämig ostsås, gratinerade i ugnen till en
+                            gyllene och
                             smakrik måltid.</p>
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-                
+
                 <article class="recipe-card">
-                    <img src="images/Franska galetter.webp" loading="lazy" alt="Franska galetter med skinka, ost och ägg">
+                    <img src="images/Franska galetter.webp" loading="lazy"
+                        alt="Franska galetter med skinka, ost och ägg">
                     <div class="recipe-card__content">
                         <h2>Franska galetter</h2>
                         <p>Bovetepannkakor fyllda med skinka, ost och ägg. En klassisk fransk specialitet.</p>
                         <a class="card-button" href="recept.html">Till receptet</a>
                     </div>
                 </article>
-                </div>
-                </section>
-                
-                <section class="review-section">
-                    <h2>Recensera Pannkaksmagi</h2>
-                
-                    <p>
-                        Har du testat något av våra pannkakstips?
-                        Lämna gärna en recension eller dela med dig av dina bästa idéer.
-                    </p>
-                
-                    <form class="review-form">
-                    
-                        <label for="name">Namn</label>
-                        <input type="text" id="name" name="name" placeholder="Ange ditt namn" required>
-                    
-                        <label for="email">E-post</label>
-                        <input type="email" id="email" name="email" placeholder="namn@email.se" required>
-                    
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone" placeholder="070-123 45 67">
-                    
-                        <label for="category">Vad vill du dela med dig av?</label>
-                        <select id="category" name="category">
-                            <option value="" disabled selected>Välj ett alternativ</option>
-                            <option value="recipe">Recept</option>
-                            <option value="tip">Pannkakstips</option>
-                            <option value="review">Recension</option>
-                            <option value="contact">Kontakt</option>
-                        </select>
-                    
-                    </form>
-                </section>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Recensera Pannkaksmagi</h2>
+
+            <p>
+                Har du testat något av våra pannkakstips?
+                Lämna gärna en recension eller dela med dig av dina bästa idéer.
+            </p>
+
+            <form class="review-form">
+
+                <label for="name">Namn</label>
+                <input type="text" id="name" name="name" placeholder="Ange ditt namn" required>
+
+                <label for="email">E-post</label>
+                <input type="email" id="email" name="email" placeholder="namn@email.se" required>
+
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="070-123 45 67">
+
+                <label for="category">Vad vill du dela med dig av?</label>
+
+                <select id="category" name="category">
+                    <option value="" disabled selected>Välj ett alternativ</option>
+                    <option value="recipe">Recept</option>
+                    <option value="tip">Pannkakstips</option>
+                    <option value="review">Recension</option>
+                    <option value="contact">Kontakt</option>
+                </select>
+
+                <!-- Radio buttons -->
+                <fieldset>
+                    <legend>Hur skulle du betygsätta våra pannkaksidéer?</legend>
+
+                    <label>
+                        <input type="radio" name="rating" value="1">
+                        1 ⭐
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="2">
+                        2 ⭐⭐
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="3">
+                        3 ⭐⭐⭐
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="4">
+                        4 ⭐⭐⭐⭐
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="5">
+                        5 ⭐⭐⭐⭐⭐
+                    </label>
+                </fieldset>
+
+                <!-- Valfri prenumeration på nyhetsbrev -->
+                <label class="checkbox-label">
+                    <input type="checkbox" name="newsletter">
+                    Jag vill få nyhetsbrev med nya recept och pannkakstips
+                </label>
+
+                <label for="message">
+                    Dela ditt bästa pannkakstips eller skriv en recension
+                </label>
+
+                <textarea id="message" name="message" rows="6"
+                    placeholder="Berätta om ditt favoritrecept eller ge oss feedback..."></textarea>
+
+                <button type="submit" class="form-button">
+                    Skicka recension
+                </button>
+
+            </form>
+        </section>
 
     </main>
 </body>
